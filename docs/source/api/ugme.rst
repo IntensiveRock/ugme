@@ -4,10 +4,10 @@ ugme package
 Submodules
 ----------
 
-ugme.ugme\_software module
+ugme.ugme module
 --------------------------
 
-.. automodule:: ugme.ugme_software
+.. automodule:: ugme.ugme
    :members:
    :show-inheritance:
    :undoc-members:
