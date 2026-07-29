@@ -1,0 +1,21 @@
+ugme package
+============
+
+Submodules
+----------
+
+ugme.ugme\_software module
+--------------------------
+
+.. autoclass:: ugme.ugme_software::UGME
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ugme
+   :members:
+   :show-inheritance:
+   :undoc-members:
