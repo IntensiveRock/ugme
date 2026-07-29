@@ -1,5 +1,6 @@
-# ugme/_ugme.py
-from typing import Optional, Sequence, Tuple, Union
+# ugme/_ugme.py | Prolly wanna change this
+from collections.abc import Sequence
+
 import numpy as np
 
 try:
@@ -52,9 +53,9 @@ def _as_tnn(tpm: np.ndarray) -> np.ndarray:
     elif n0 == n2:
         return np.einsum("iTk -> Tik", tpm)
 
-    raise ValueError(f"Check TPM dimensions. Cannot delineate time and dimension axes.")
+    raise ValueError("Check TPM dimensions. Cannot delineate time and dimension axes.")
     
-def _column_normalize(tpm: np.ndarray, atol: float = 1e-6) -> Tuple[np.ndarray, str]:
+def _column_normalize(tpm: np.ndarray, atol: float = 1e-6) -> tuple[np.ndarray, str]:
     """Ensure TPMs are column-normalized (transpose row-normalized input)
     Parameters
     ----------
@@ -176,7 +177,7 @@ def _predict_dynamics(U_inf: np.ndarray, tpm_ref: np.ndarray,
     """
     # get shapes and allow time to be larger than the reference time
     T, n, _ = tpm_ref.shape
-    n_steps = int(max(n_steps, tpm_ref.shape[0]))
+    n_steps = int(max(n_steps, T))
 
     # predicted dynamics
     pred = np.empty( (n_steps, n, n), dtype=tpm_ref.dtype)
@@ -230,7 +231,7 @@ def _rmse(reference: np.ndarray, prediction: np.ndarray) -> float:
     return float(error)
 
 class UGMEModel(Model):
-    """
+    r"""
     UGME model to store the reference dynamics, U(t), and the predicted dynamics
     (with and without averaging)
 
@@ -239,7 +240,7 @@ class UGMEModel(Model):
     tpm : ndarray (T, n, n)
           Column-normalized reference TPMs with TPM[0] == I
     U   : ndarray (T, n, n)
-          Time-local propagator U[t] = TPM[t] @ [ TPM[t - ∆t] ]^{-1}
+          Time-local propagator U[t] = TPM[t] @ [ TPM[t - ∆t] ]⁻¹
     dt  : float
           TPM frame spacing
     """
@@ -251,7 +252,6 @@ class UGMEModel(Model):
         self._original_normalization = original_normalization
         self._identity_prepended = identity_prepended
 
-    # so I don't need parentheses for calling these things
     @property
     def tpm(self): return self._tpm
     @property
@@ -314,7 +314,7 @@ class UGMEModel(Model):
             test[t] = self._U[t] @ test[t - 1]
         return test
 
-    def predict(self, tau_R: int, n_steps: Optional[int] = None) -> np.ndarray:
+    def predict(self, tau_R: int, n_steps: int | None = None) -> np.ndarray:
         """Predict TPM dynamics using a constant long-time propagator.
 
         Uses U(tau_R) as the asymptotic time-local propagator and propagates the
@@ -361,12 +361,12 @@ class UGMEModel(Model):
         return np.array([self.rmse(int(t)) for t in tau_R_values])
 
     def average_U(self, t_r: int, tau_R: int) -> np.ndarray:
-        """Calculate the time-averaged propagator over a specified interval.
+        r"""Calculate the time-averaged propagator over a specified interval.
 
         Averages the time-local propagators U(t) from frame t_r up to, but not
         including, tau_R. The resulting propagator is
-
-            <U> = (1 / (tau_R - t_r)) * sum_{t=t_r}^{tau_R-1} U[t].
+        
+        .. math:: \langle U\rangle = (1 / (\tau_R - t_r)) * \sum_{t=t_r}^{\tau_R-1} U[t].
 
         Parameters
         ----------
@@ -417,7 +417,7 @@ class UGMEModel(Model):
         return int(tau_R_values[mask[0]]) if mask.size else int(tau_R_values[int(np.argmin(rmses))])
 
 class UGME(Estimator):
-    r"""generalized master equation (U-GME) estimator
+    r"""Generalized master equation (U-GME) estimator
 
     Validate/check TPM time-series and extract GME with it
 
@@ -433,7 +433,7 @@ class UGME(Estimator):
         self.dt = float(dt)
         self.atol = float(atol)
 
-    def fit(self, data: Union[np.ndarray, str], **kwargs) -> "UGME":
+    def fit(self, data: np.ndarray | str, **kwargs) -> "UGME":
         # cool trick from software class: Union allows for either input type
         tpm = _as_tnn(data)
         tpm, orig = _column_normalize(tpm, atol=self.atol)
@@ -443,7 +443,7 @@ class UGME(Estimator):
                                 original_normalization=orig)
         return self
 
-    def fetch_model(self) -> Optional[UGMEModel]:
+    def fetch_model(self) -> UGMEModel | None:
         return getattr(self, "_model", None)
 
     def fit_fetch(self, data, **kwargs) -> UGMEModel:
