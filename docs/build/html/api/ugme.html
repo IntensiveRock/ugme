@@ -39,11 +39,11 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 </section>
-<section id="module-ugme.ugme_software">
-<span id="ugme-ugme-software-module"></span><h2>ugme.ugme_software module<a class="headerlink" href="#module-ugme.ugme_software" title="Link to this heading">¶</a></h2>
+<section id="module-ugme.ugme">
+<span id="ugme-ugme-module"></span><h2>ugme.ugme module<a class="headerlink" href="#module-ugme.ugme" title="Link to this heading">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGME">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ugme.ugme_software.</span></span><span class="sig-name descname"><span class="pre">UGME</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-06</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ugme.ugme_software.UGME" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGME">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ugme.ugme.</span></span><span class="sig-name descname"><span class="pre">UGME</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-06</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ugme.ugme.UGME" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Estimator</span></code></p>
 <p>Generalized master equation (U-GME) estimator</p>
 <p>Validate/check TPM time-series and extract GME with it</p>
@@ -56,9 +56,9 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGME.fetch_model">
-<span class="sig-name descname"><span class="pre">fetch_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ugme.ugme_software.UGMEModel" title="ugme.ugme_software.UGMEModel"><span class="pre">UGMEModel</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGME.fetch_model" title="Link to this definition">¶</a></dt>
-<dd><p>Yields the estimated model. Can be None if <a class="reference internal" href="#ugme.ugme_software.UGME.fit" title="ugme.ugme_software.UGME.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></a> was not called.</p>
+<dt class="sig sig-object py" id="ugme.ugme.UGME.fetch_model">
+<span class="sig-name descname"><span class="pre">fetch_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ugme.ugme.UGMEModel" title="ugme.ugme.UGMEModel"><span class="pre">UGMEModel</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#ugme.ugme.UGME.fetch_model" title="Link to this definition">¶</a></dt>
+<dd><p>Yields the estimated model. Can be None if <a class="reference internal" href="#ugme.ugme.UGME.fit" title="ugme.ugme.UGME.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></a> was not called.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>model</strong> – The estimated model or None.</p>
@@ -70,10 +70,10 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGME.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ugmeestimator.html#ugme.ugme_software.UGME" title="ugme.ugme_software.UGME"><span class="pre">UGME</span></a></span></span><a class="headerlink" href="#ugme.ugme_software.UGME.fit" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGME.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="ugmeestimator.html#ugme.ugme.UGME" title="ugme.ugme.UGME"><span class="pre">UGME</span></a></span></span><a class="headerlink" href="#ugme.ugme.UGME.fit" title="Link to this definition">¶</a></dt>
 <dd><p>Fits data to the estimator’s internal <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code> and overwrites it. This way, every call to
-<a class="reference internal" href="#ugme.ugme_software.UGME.fetch_model" title="ugme.ugme_software.UGME.fetch_model"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fetch_model()</span></code></a> yields an autonomous model instance. Sometimes a <code class="code docutils literal notranslate"><span class="pre">partial_fit</span></code> method is available,
+<a class="reference internal" href="#ugme.ugme.UGME.fetch_model" title="ugme.ugme.UGME.fetch_model"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fetch_model()</span></code></a> yields an autonomous model instance. Sometimes a <code class="code docutils literal notranslate"><span class="pre">partial_fit</span></code> method is available,
 in which case the model can get updated by the estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -92,14 +92,14 @@ in which case the model can get updated by the estimator.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGME.fit_fetch">
-<span class="sig-name descname"><span class="pre">fit_fetch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ugme.ugme_software.UGMEModel" title="ugme.ugme_software.UGMEModel"><span class="pre">UGMEModel</span></a></span></span><a class="headerlink" href="#ugme.ugme_software.UGME.fit_fetch" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGME.fit_fetch">
+<span class="sig-name descname"><span class="pre">fit_fetch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ugme.ugme.UGMEModel" title="ugme.ugme.UGMEModel"><span class="pre">UGMEModel</span></a></span></span><a class="headerlink" href="#ugme.ugme.UGME.fit_fetch" title="Link to this definition">¶</a></dt>
 <dd><p>Fits the internal model on data and subsequently fetches it in one call.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>array_like</em>) – Data that is used to fit the model.</p></li>
-<li><p><strong>**kwargs</strong> – Additional arguments to <a class="reference internal" href="#ugme.ugme_software.UGME.fit" title="ugme.ugme_software.UGME.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – Additional arguments to <a class="reference internal" href="#ugme.ugme.UGME.fit" title="ugme.ugme.UGME.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -114,8 +114,8 @@ in which case the model can get updated by the estimator.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ugme.ugme_software.</span></span><span class="sig-name descname"><span class="pre">UGMEModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tpm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_normalization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'col'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_prepended</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ugme.ugme_software.UGMEModel" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ugme.ugme.</span></span><span class="sig-name descname"><span class="pre">UGMEModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tpm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_normalization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'col'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_prepended</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ugme.ugme.UGMEModel" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
 <p>UGME model to store the reference dynamics, U(t), and the predicted dynamics
 (with and without averaging)</p>
@@ -129,13 +129,13 @@ in which case the model can get updated by the estimator.</p>
 </dd>
 </dl>
 <dl class="py property">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.U">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">U</span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.U" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.U">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">U</span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.U" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.average_U">
-<span class="sig-name descname"><span class="pre">average_U</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.average_U" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.average_U">
+<span class="sig-name descname"><span class="pre">average_U</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.average_U" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the time-averaged propagator over a specified interval.</p>
 <p>Averages the time-local propagators U(t) from frame t_r up to, but not
 including, tau_R. The resulting propagator is</p>
@@ -164,8 +164,8 @@ in the average. Must satisfy tau_R &lt;= the number of reference frames.</p></li
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.check_initial_U">
-<span class="sig-name descname"><span class="pre">check_initial_U</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.check_initial_U" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.check_initial_U">
+<span class="sig-name descname"><span class="pre">check_initial_U</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.check_initial_U" title="Link to this definition">¶</a></dt>
 <dd><p>Check that the initial time-local propagators satisfy the expected identities.</p>
 <p>Verifies that U[0] is the identity matrix and that U[1] is equal to the
 first nonzero-time reference TPM. These conditions follow from the
@@ -186,33 +186,33 @@ TPM[1] within the specified tolerance; False otherwise.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.dt">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">dt</span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.dt" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.dt">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">dt</span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.dt" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.identity_prepended">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">identity_prepended</span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.identity_prepended" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.identity_prepended">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">identity_prepended</span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.identity_prepended" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.n_states">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">n_states</span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.n_states" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.n_states">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">n_states</span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.n_states" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.n_steps">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">n_steps</span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.n_steps" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.n_steps">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">n_steps</span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.n_steps" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.original_normalization">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">original_normalization</span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.original_normalization" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.original_normalization">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">original_normalization</span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.original_normalization" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tau_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.predict" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tau_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.predict" title="Link to this definition">¶</a></dt>
 <dd><p>Predict TPM dynamics using a constant long-time propagator.</p>
 <p>Uses U(tau_R) as the asymptotic time-local propagator and propagates the
 reference TPM dynamics beyond tau_R according to</p>
@@ -245,13 +245,13 @@ reference TPMs for t &lt; tau_R and propagated using U(tau_R) thereafter.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.predict_averaged">
-<span class="sig-name descname"><span class="pre">predict_averaged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.predict_averaged" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.predict_averaged">
+<span class="sig-name descname"><span class="pre">predict_averaged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.predict_averaged" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.reconstruct_tpm">
-<span class="sig-name descname"><span class="pre">reconstruct_tpm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.reconstruct_tpm" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.reconstruct_tpm">
+<span class="sig-name descname"><span class="pre">reconstruct_tpm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.reconstruct_tpm" title="Link to this definition">¶</a></dt>
 <dd><p>Reconstruct the TPM trajectory from the time-local propagators.</p>
 <p>Starting from TPM[0] = I, recursively applies the time-local propagators
 according to</p>
@@ -272,28 +272,28 @@ reference TPM array, <cite>(T, n, n)</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.rmse">
-<span class="sig-name descname"><span class="pre">rmse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tau_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.rmse" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.rmse">
+<span class="sig-name descname"><span class="pre">rmse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tau_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.rmse" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.rmse_averaged">
-<span class="sig-name descname"><span class="pre">rmse_averaged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.rmse_averaged" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.rmse_averaged">
+<span class="sig-name descname"><span class="pre">rmse_averaged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.rmse_averaged" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.scan_rmse">
-<span class="sig-name descname"><span class="pre">scan_rmse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tau_R_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.scan_rmse" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.scan_rmse">
+<span class="sig-name descname"><span class="pre">scan_rmse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tau_R_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.scan_rmse" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.select_tau_R">
-<span class="sig-name descname"><span class="pre">select_tau_R</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">averaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_R_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.select_tau_R" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.select_tau_R">
+<span class="sig-name descname"><span class="pre">select_tau_R</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">averaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_R_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.select_tau_R" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="ugme.ugme_software.UGMEModel.tpm">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">tpm</span></span><a class="headerlink" href="#ugme.ugme_software.UGMEModel.tpm" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="ugme.ugme.UGMEModel.tpm">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">tpm</span></span><a class="headerlink" href="#ugme.ugme.UGMEModel.tpm" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
