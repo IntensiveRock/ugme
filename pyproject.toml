@@ -1,0 +1,26 @@
+[project]
+name = "ugme"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "IntensiveRock", email = "froggycham@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "deeptime>=0.4.5",
+    "numpy>=2.4.6",
+    "sphinx>=9.0.4",
+]
+
+[project.scripts]
+ugme = "ugme:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+docs = [
+    "sphinx>=9.0.4",
+]
