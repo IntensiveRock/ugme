@@ -3,4 +3,4 @@ UGME
 
 The UGME object is the primary interface for this code. Using the UGME object.
 
-.. autoclass:: ugme.ugme_software::UGME
+.. autoclass:: ugme.ugme::UGME
