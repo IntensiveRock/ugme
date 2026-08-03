@@ -15,10 +15,12 @@ This repository contains tools for:
 
 ## Associated Publications
 
-The methods and code in this repository were developed in connection with the following publications:
+The methods and code in this repository were developed in connection with the following publication:
 
 1. Dominic, A. J. III; Sayer, T.; Cao, S.; Markland, T. E.; Huang, X.; Montoya-Castillo, A.  
    **Building insightful, memory-enriched models to capture long-time biochemical processes from short-time simulations.** *Proceedings of the National Academy of Sciences* **2023**, *120* (12), e2221048120.
+
+And a broad discussion of memory effects in biomolecular dynamics can be found in:
 
 2. Dominic, A. J. III; Cao, S.; Huang, X.; Montoya-Castillo, A.  
    **Memory unlocks the future of biomolecular dynamics: Transformative tools to uncover physical insights accurately and efficiently.** *Journal of the American Chemical Society* **2023**, *145* (18), 9916–9927.
@@ -36,19 +38,5 @@ If you use this repository or adapt the methods in your own work, please cite:
   number = {12},
   pages = {e2221048120},
   year = {2023}
-}
-```
-
-and 
-
-```bibtex
-@article{dominic2023perspective,
-  title = {Memory unlocks the future of biomolecular dynamics: Transformative tools to uncover physical insights accurately and efficiently}, 
-  author = {Anthony J. Dominic III and Siqin Cao and Xuhui Huang and Andrés Montoya-Castillo},
-  journal = {Journal of the American Chemical Society},
-  volume = {145},
-  number = {18},
-  pages = {9916−-9927},
-  year = {2023},
 }
 ```
