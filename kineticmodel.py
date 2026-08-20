@@ -1,4 +1,7 @@
 import numpy as np
+import matplotlib.pyplot as plt
+plt.rcParams["font.size"] = 14
+plt.rcParams['font.family'] = 'serif'
 
 def implied_timescales(T, tau):
     """
@@ -7,6 +10,13 @@ def implied_timescales(T, tau):
     ev = np.sort(np.abs(np.linalg.eigvals(T)))[::-1]
     ITS = -tau / np.log(ev[1:])
     return ITS
+
+def equilibrium_populations(C):
+    """
+    Returns the equilibrium populations
+    """
+    s = C.sum(axis=0)
+    return s / s.sum()
 
 def symmetrize(C):
     """
@@ -79,12 +89,37 @@ def coarse_grained_dynamics(T, assnt, PAD, tsteps, axis="Tnn"):
 
     return dynamics
 
-def equilibrium_populations(C):
-    """
-    Returns the equilibrium populations
-    """
-    s = C.sum(axis=0)
-    return s / s.sum()
+def plot_coarse_grained_dynamics(time_axis, dynamics, n_macro, tsteps,
+    figsize=(8.5, 8.5), xlabel="Time [steps]", save=False, filename="coarse_grained_dynamics.pdf"):
+    fig = plt.figure(figsize=figsize)
 
+    xlb = 0
+    xub = tsteps
+    xmb = xub // 2
 
+    ylb = 0
+    ymb = 0.5
+    yub = 1
+
+    for i in range(n_macro):
+        for j in range(n_macro):
+            subplot_number = n_macro * i + j + 1
+            plt.subplot(n_macro, n_macro, subplot_number)
+
+            plt.plot(time_axis, dynamics[:, i, j], color="black", ls="-")
+            plt.xticks([])
+            plt.yticks([])
+            plt.xlim(xlb, xub)
+            plt.ylim(ylb, yub)
+
+            if i == n_macro - 1: plt.xticks([xlb, xmb, xub])
+            if j == 0: plt.yticks([ylb, ymb, yub])
+            if i == n_macro - 1 and j != n_macro - 1:
+                plt.xticks([xlb, xmb])
+
+    plt.subplots_adjust(wspace=0.1, hspace=0.2)
+    fig.text(0.5, 0.06, xlabel, ha="center", va="center")
+    if save:
+        fig.savefig(filename, dpi=300, bbox_inches="tight", transparent=True)
+    plt.show()
 
