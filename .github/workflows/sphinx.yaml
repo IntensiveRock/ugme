@@ -15,7 +15,10 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'  # Matches your package requirements
-
+    - name: Install Pandoc
+      uses: pandoc/actions/setup@v1
+      with:
+        version: '3.1.11'  # Installs Pandoc for nbsphinx conversions
     - name: Install dependencies and package
       run: |
         python -m pip install --upgrade pip
