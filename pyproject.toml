@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "IntensiveRock", email = "froggycham@gmail.com" }
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.8"
 dependencies = [
     "deeptime>=0.4.5",
     "ipykernel>=7.3.0",
