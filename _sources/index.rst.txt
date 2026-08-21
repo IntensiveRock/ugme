@@ -65,5 +65,6 @@ cite:
    :maxdepth: 2
    :caption: Contents:
 
+   notebooks/software_testing
    api/modules
    api/ugmeestimator
