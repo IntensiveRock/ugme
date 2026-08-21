@@ -10,6 +10,7 @@ requires-python = ">=3.11"
 dependencies = [
     "deeptime>=0.4.5",
     "matplotlib>=3.11.1",
+    "nbsphinx>=0.9.8",
     "numpy>=2.4.6",
     "sphinx>=9.0.4",
 ]
