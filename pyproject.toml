@@ -6,10 +6,9 @@ readme = "README.md"
 authors = [
     { name = "IntensiveRock", email = "froggycham@gmail.com" }
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 dependencies = [
     "deeptime>=0.4.5",
-    "ipykernel>=7.3.0",
     "matplotlib>=3.11.1",
     "numpy>=2.4.6",
     "sphinx>=9.0.4",
