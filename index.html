@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>UGME &#8212; UGME 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ugme" href="api/modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ugme">
+<h1>UGME<a class="headerlink" href="#ugme" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">ugme</span></code> is a software for building and analyzing
+time-convolutionless generalized master equation models of biomolecular
+dynamics. We developed this method to directly include short-time memory
+effects in reduced dynamical models that recover long-time kinetics from
+short-time simulations.</p>
+<p><strong>Overview</strong></p>
+<p>Our U-GME framework provides a way to incorporate non-Markovian effects
+into reduced dynamical models while retaining a compact description of
+the dynamics. We further introduce a simple averaging procedure to tame
+the noise from underconverged correlation matrices.</p>
+<p>This repository contains tools for: - Estimating time-local memory
+functions from a time-series of transition probability matrices (TPMs),
+<span class="math notranslate nohighlight">\(C(t)\)</span> - Computing the time-local generator <span class="math notranslate nohighlight">\(U(t)\)</span> from the
+<span class="math notranslate nohighlight">\(C(t)\)</span> - Characterizing memory plateau <span class="math notranslate nohighlight">\(\tau_R\)</span> timescales
+with the RMSE error metric (in the absence of noise) - Identifying
+optimal onset (<span class="math notranslate nohighlight">\(t_r\)</span>) and offset <span class="math notranslate nohighlight">\((\tau_R)\)</span> of averaging for
+the time-local propagator U(t) - Propagating the long-time dynamics of
+the TPMs with the resulting
+<span class="math notranslate nohighlight">\(U_\infty(\delta t) \equiv U(t \geq \tau_R)\)</span>.</p>
+<div class="section" id="associated-publications">
+<h2>Associated Publications<a class="headerlink" href="#associated-publications" title="Permalink to this headline">¶</a></h2>
+<p>The methods and code in this repository were developed in connection
+with the following publications:</p>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">Dominic, A. J. III; Sayer, T.; Cao, S.; Markland, T. E.; Huang, X.;
+Montoya-Castillo, A.</div>
+<div class="line"><strong>Building insightful, memory-enriched models to capture long-time
+biochemical processes from short-time simulations.</strong> <em>Proceedings
+of the National Academy of Sciences</em> <strong>2023</strong>, <em>120</em> (12),
+e2221048120.</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>If you use this repository or adapt the methods in your own work, please
+cite:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">dominic2023ugme</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Building insightful, memory-enriched models to capture long-time biochemical processes from short-time simulations}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Anthony J. Dominic III and Thomas Sayer and Siqin Cao and Thomas E. Markland and Xuhui Huang and Andrés Montoya-Castillo}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{Proceedings of the National Academy of Sciences}</span><span class="p">,</span>
+  <span class="na">volume</span> <span class="p">=</span> <span class="s">{120}</span><span class="p">,</span>
+  <span class="na">number</span> <span class="p">=</span> <span class="s">{12}</span><span class="p">,</span>
+  <span class="na">pages</span> <span class="p">=</span> <span class="s">{e2221048120}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2023}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">ugme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/ugme.html">ugme package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/ugmeestimator.html">UGME</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">UGME</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">ugme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/ugmeestimator.html">UGME</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="api/modules.html" title="next chapter">ugme</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2026, Anthony J Dominic III.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
